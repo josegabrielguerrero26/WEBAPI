@@ -1,0 +1,27 @@
+{
+  "name": "lab1",
+  "version": "1.0.0",
+  "description": "lab1test",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josegabrielguerrero26/CSE341WEB.git"
+  },
+  "author": "Gabriel Guerrero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/josegabrielguerrero26/CSE341WEB/issues"
+  },
+  "homepage": "https://github.com/josegabrielguerrero26/CSE341WEB#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22",
+    "save-dev": "^0.0.1-security"
+  },
+  "devDependencies": {},
+  "keywords": []
+}
