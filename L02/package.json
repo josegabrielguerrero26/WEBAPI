@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/josegabrielguerrero26/CSE341WEB.git"
+    "url": "git+https://github.com/josegabrielguerrero26/WEBAPI.git"
   },
   "author": "Gabriel Guerrero",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/josegabrielguerrero26/CSE341WEB/issues"
+    "url": "https://github.com/josegabrielguerrero26/WEBAPI.git/issues"
   },
-  "homepage": "https://github.com/josegabrielguerrero26/CSE341WEB#readme",
+  "homepage": "hhttps://github.com/josegabrielguerrero26/WEBAPI.git",
   "dependencies": {
     "express": "^4.18.2",
     "nodemon": "^2.0.22",
