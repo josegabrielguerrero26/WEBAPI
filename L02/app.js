@@ -19,6 +19,7 @@ async function main() {
 
     try {
         await client.connect();
+        console.log("connected to the database MongoDB")
 
     } catch (e) {
         console.error(e);
