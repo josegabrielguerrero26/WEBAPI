@@ -1,7 +1,13 @@
-GET http://localhost:3000 HTTP/1.1
+### Local 1
+GET http://localhost:8080/test1 HTTP/1.1
 
-###
-GET http://localhost:3000/test2 HTTP/1.1
+### LOCAL 2
+GET http://localhost:8080/test2 HTTP/1.1
 
-###
+### WEB RENDER
 GET https://l01.onrender.com HTTP/1.1
+
+### GET single-all MONGOdb-alldocuments (LOCAL)
+GET http://localhost:8080/contacts HTTP/1.1
+###
+GET http://localhost:8080/contacts/64486ba99ef9a37a74a1f961 HTTP/1.1

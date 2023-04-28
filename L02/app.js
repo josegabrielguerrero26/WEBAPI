@@ -1,20 +1,32 @@
-var express= require('express');
-var app = express();
-const{MongoClient}= require('mongodb'); // Mongo conection
+const express = require('express');
+const bodyParser = require('body-parser');
+const mongodb = require('./data_base/connect');
 
-var port= process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
+const app = express();
 
+app
+  .use(bodyParser.json())
+  .use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    next();
+  })
+  .use('/', require('./routes'));
 
-
-app.use('/', require('./routes'));
-app.listen(port, ()=> {
-    console.log("Server is running on port " + port);
+mongodb.initDb((err, mongodb) => {
+  if (err) {
+    console.log(err);
+  } else {
+    app.listen(port);
+    console.log(`Connected to DB and listening on ${port}`);
+  }
 });
 
-
+/*
 // Mongo function
 async function main() {
-    const uri= "mongodb+srv://guerrerogjp:Hola1234@test.scquqm9.mongodb.net/test"
+    //const uri= "mongodb+srv://guerrerogjp:Hola1234@test.scquqm9.mongodb.net/test"
+    const uri= `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@test.scquqm9.mongodb.net/test`
     const client = new MongoClient(uri);
 
     try {
@@ -30,4 +42,4 @@ async function main() {
 }
 
 main().catch(console.error);
-
+*/

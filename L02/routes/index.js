@@ -1,9 +1,12 @@
-const routes = require('express').Router();
+const router = require('express').Router();
 
-const myController= require('../controllers')
+const name= require('../controllers')
 
-routes.get('/', myController.test1)
-routes.get('/test2', myController.test2)
-//routes.use('/contacts', require('./contacts'))
+router.get('/test1', name.test1);
+router.get('/test2', name.test2);
+router.get('/contacts', require('./contacts'))
 
-module.exports = routes;
+
+
+
+module.exports = router;
