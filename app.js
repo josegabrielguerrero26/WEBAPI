@@ -21,25 +21,3 @@ mongodb.initDb((err, mongodb) => {
     console.log(`Connected to DB and listening on ${port}`);
   }
 });
-
-/*
-// Mongo function
-async function main() {
-    //const uri= "mongodb+srv://guerrerogjp:Hola1234@test.scquqm9.mongodb.net/test"
-    const uri= `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@test.scquqm9.mongodb.net/test`
-    const client = new MongoClient(uri);
-
-    try {
-        await client.connect();
-        console.log("connected to the database MongoDB")
-
-    } catch (e) {
-        console.error(e);
-    }finally{
-        await client.close();
-    }
- 
-}
-
-main().catch(console.error);
-*/

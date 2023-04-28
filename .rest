@@ -9,4 +9,7 @@ GET http://localhost:8080/contacts HTTP/1.1
 GET http://localhost:8080/contacts/64486ba99ef9a37a74a1f960 HTTP/1.1
 
 ### WEB RENDER L02
-GET https://l02.onrender.com
+GET https://l02.onrender.com/contacts
+
+###
+GET https://l02.onrender.com/contacts/64486ba99ef9a37a74a1f960 HTTP/1.1
