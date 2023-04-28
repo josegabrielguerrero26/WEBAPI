@@ -1,8 +1,4 @@
-### Local 1
-GET http://localhost:8080/test1 HTTP/1.1
 
-### LOCAL 2
-GET http://localhost:8080/test2 HTTP/1.1
 
 ### WEB RENDER L01
 GET https://l01.onrender.com HTTP/1.1
