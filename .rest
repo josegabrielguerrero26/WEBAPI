@@ -3,13 +3,39 @@
 ### WEB RENDER L01
 GET https://l01.onrender.com HTTP/1.1
 
-### GET single-all MONGOdb-alldocuments (LOCAL)
-GET http://localhost:8080/contacts HTTP/1.1
-###
-GET http://localhost:8080/contacts/64486ba99ef9a37a74a1f960 HTTP/1.1
-
-### WEB RENDER L02
+### WEB RENDER L02/all
 GET https://l02.onrender.com/contacts
 
-###
+###WEB RENDER L02/1
 GET https://l02.onrender.com/contacts/64486ba99ef9a37a74a1f960 HTTP/1.1
+
+
+
+### local get all
+GET http://localhost:8080/contacts HTTP/1.1
+### local get 1
+GET http://localhost:8080/contacts/64486ba99ef9a37a74a1f960 HTTP/1.1
+### Create contact 
+POST http://localhost:8080/contacts HTTP/1.1 content-type: application/json
+
+{
+    
+    "firstName":"Dell", 
+    "lastName":"Evans", 
+    "email":"delv@google.com", 
+    "favoriteColor":"white", 
+    "birthday":"01/01/1950"
+}
+### PUT contact 
+PUT http://localhost:8080/contacts/6220bcb39cd507e920c75a0b HTTP/1.1 content-type: application/json
+
+{
+    "firstName":"Gabriel", 
+    "lastName":"Guerrero", 
+    "email":"dan@google.com", 
+    "favoriteColor":"blue", 
+    "birthday":"01/01/1988"
+}
+
+### DELETE contact 
+DELETE http://localhost:8080/contacts/645446ff2877387c7bcf50fb HTTP/1.1
