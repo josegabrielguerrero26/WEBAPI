@@ -1,9 +1,10 @@
-const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./db/connect');
+const express = require('express');
 
-const port = process.env.PORT || 8080;
+
 const app = express();
+const port = process.env.PORT || 8080;
 
 app
   .use(bodyParser.json())

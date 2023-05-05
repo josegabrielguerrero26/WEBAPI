@@ -14,7 +14,7 @@ GET https://l02.onrender.com/contacts/64486ba99ef9a37a74a1f960 HTTP/1.1
 ### local get all
 GET http://localhost:8080/contacts/ HTTP/1.1
 ### local get 1
-GET http://localhost:8080/contacts/64557b0138da77c10b293a04 HTTP/1.1
+GET http://localhost:8080/contacts/64559205fdcf5e5eae3af532 HTTP/1.1
 
 ### Create contact 
 POST http://localhost:8080/contacts HTTP/1.1
@@ -29,14 +29,14 @@ Content-Type: application/json
 }
 
 ### PUT contact 
-PUT http://localhost:8080/contacts/64557732fdcf5e5eae3af52a HTTP/1.1
+PUT http://localhost:8080/contacts/64559205fdcf5e5eae3af532 HTTP/1.1
 Content-Type: application/json 
 
 {
         "first_name": "Gabriel",
         "last_name": "Paredes",
         "email":"guerrero.gjp@gmail.com",
-        "favorite_color":"white",
+        "favorite_color":"orange",
         "birthday":"02/06/1955"
 }
 
