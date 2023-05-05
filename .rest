@@ -36,7 +36,7 @@ Content-Type: application/json
         "first_name": "Gabriel",
         "last_name": "Paredes",
         "email":"guerrero.gjp@gmail.com",
-        "favorite_color":"orange",
+        "favorite_color":"white",
         "birthday":"02/06/1955"
 }
 
