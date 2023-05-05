@@ -59,15 +59,14 @@ const updateContact = async (req, res) => {
 
 const deleteContact = async (req, res) => {
   const userId = new ObjectId(req.params.id);
-  const result =  await mongodb.getDb().db('test').collection('contacts').remove({ _id: userId }, true);
-  console.log(result);
-  if (result.deletedCount > 0) {
+  const response = await mongodb.getDb().db('test').collection('contacts').deleteOne({ _id: userId }, true);
+  console.log(response);
+  if (response.deletedCount > 0) {
     res.status(204).send();
   } else {
-    res.status(500).json(result.error || 'Error.');
+    res.status(500).json(response.error || 'Error occurred while deleting contact');
   }
 };
-
 
 module.exports = {
   getAll,

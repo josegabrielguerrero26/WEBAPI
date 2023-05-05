@@ -36,9 +36,9 @@ Content-Type: application/json
         "first_name": "Gabriel",
         "last_name": "Paredes",
         "email":"guerrero.gjp@gmail.com",
-        "favorite_color":"blue",
+        "favorite_color":"red",
         "birthday":"02/06/1955"
 }
 
 ### DELETE contact 
-DELETE http://localhost:8080/contacts/64557b0138da77c10b293a04 HTTP/1.1
+DELETE http://localhost:8080/contacts/645577ee9f597725c9a17ad7 HTTP/1.1
