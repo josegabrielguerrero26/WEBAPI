@@ -1,7 +1,6 @@
 [
 
     {
-        "id": 1,
         "first_name": "Gabriel",
         "last_name": "Guerrero",
         "email":"guerrero.gjp@gmail.com",
@@ -9,7 +8,6 @@
         "birthday":"03/26/1988"
     },
     {
-        "id": 2,
         "first_name": "Mick",
         "last_name": "Martinez",
         "email":"mkick.hols@gmail.com",
@@ -17,7 +15,6 @@
         "birthday":"12/26/1977"
     },
     {
-        "id": 3,
         "first_name": "Lud",
         "last_name": "Evans",
         "email":"levans@gmail.com",
