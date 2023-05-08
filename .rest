@@ -21,7 +21,7 @@ POST http://localhost:8080/contacts HTTP/1.1
 Content-Type: application/json
 
 {
-        "first_name": "test",
+        "first_name": "test1",
         "last_name": "King",
         "email":"delv@google.com",
         "favorite_color":"blue",
@@ -29,14 +29,14 @@ Content-Type: application/json
 }
 
 ### PUT contact 
-PUT http://localhost:8080/contacts/64559205fdcf5e5eae3af532 HTTP/1.1
+PUT http://localhost:8080/contacts/64596749b7d12ba4b43cc0ee HTTP/1.1
 Content-Type: application/json 
 
 {
         "first_name": "Gabriel",
         "last_name": "Paredes",
         "email":"guerrero.gjp@gmail.com",
-        "favorite_color":"red",
+        "favorite_color":"brown",
         "birthday":"02/06/1955"
 }
 
