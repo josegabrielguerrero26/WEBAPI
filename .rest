@@ -42,3 +42,38 @@ Content-Type: application/json
 
 ### DELETE contact 
 DELETE http://localhost:8080/contacts/64559c8e44d94cc4171a2a78 HTTP/1.1
+
+
+### PRODUCTION 
+##get all
+GET https://l03-lcf3.onrender.com/contacts/ HTTP/1.1
+
+###  get 1
+GET https://l03-lcf3.onrender.com/contacts/64559205fdcf5e5eae3af532 HTTP/1.1
+
+### Create contact 
+POST https://l03-lcf3.onrender.com/contacts HTTP/1.1
+Content-Type: application/json
+
+{
+        "first_name": "test2000",
+        "last_name": "King",
+        "email":"delv@google.com",
+        "favorite_color":"blue",
+        "birthday":"01/01/1950"
+}
+
+### PUT contact 
+PUT https://l03-lcf3.onrender.com/contacts/64559205fdcf5e5eae3af532 HTTP/1.1
+Content-Type: application/json 
+
+{
+        "first_name": "Gabriel",
+        "last_name": "Paredes",
+        "email":"guerrero.gjp@gmail.com",
+        "favorite_color":"blue",
+        "birthday":"02/06/1955"
+}
+
+### DELETE contact 
+DELETE http://localhost:8080/contacts/64596c9a974941b0748e6925 HTTP/1.1
