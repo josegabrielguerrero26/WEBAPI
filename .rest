@@ -21,7 +21,7 @@ POST http://localhost:8080/contacts HTTP/1.1
 Content-Type: application/json
 
 {
-        "first_name": "Dell",
+        "first_name": "test",
         "last_name": "King",
         "email":"delv@google.com",
         "favorite_color":"blue",
@@ -36,9 +36,9 @@ Content-Type: application/json
         "first_name": "Gabriel",
         "last_name": "Paredes",
         "email":"guerrero.gjp@gmail.com",
-        "favorite_color":"white",
+        "favorite_color":"red",
         "birthday":"02/06/1955"
 }
 
 ### DELETE contact 
-DELETE http://localhost:8080/contacts/645577ee9f597725c9a17ad7 HTTP/1.1
+DELETE http://localhost:8080/contacts/64559c8e44d94cc4171a2a78 HTTP/1.1
