@@ -3,9 +3,9 @@ const swaggerAutogen = require('swagger-autogen')();
 const doc = {
   info: {
     title: 'API documentation',
-    description: 'MongoDb with contacts API'
+    description: 'MongoDb with contacts'
   },
-  host: 'https://project1-kt79.onrender.com',
+  host: 'localhost:8080',
   schemes: ['http']
 };
 
