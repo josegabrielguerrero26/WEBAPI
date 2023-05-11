@@ -14,7 +14,7 @@ GET https://l02.onrender.com/contacts/64486ba99ef9a37a74a1f960 HTTP/1.1
 ### local get all
 GET http://localhost:8080/contacts/ HTTP/1.1
 ### local get 1
-GET http://localhost:8080/contacts/64559205fdcf5e5eae3af532 HTTP/1.1
+GET http://localhost:8080/contacts/645d23ba56462185f5159565 HTTP/1.1
 
 ### Create contact 
 POST http://localhost:8080/contacts HTTP/1.1
@@ -41,7 +41,7 @@ Content-Type: application/json
 }
 
 ### DELETE contact 
-DELETE http://localhost:8080/contacts/64559c8e44d94cc4171a2a78 HTTP/1.1
+DELETE http://localhost:8080/contacts/645d23ba56462185f5159565 HTTP/1.1
 
 
 ### PRODUCTION 
