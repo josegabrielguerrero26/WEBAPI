@@ -46,7 +46,7 @@ DELETE http://localhost:8080/contacts/645d23ba56462185f5159565 HTTP/1.1
 
 ### PRODUCTION 
 ##get all
-GET https://project1-kt79.onrender.com//contacts/ HTTP/1.1
+GET https://project1-kt79.onrender.com/contacts/ HTTP/1.1
 
 ###  get 1
 GET https://l03-lcf3.onrender.com/contacts/64559205fdcf5e5eae3af532 HTTP/1.1
