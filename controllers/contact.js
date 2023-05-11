@@ -1,5 +1,5 @@
 const db = require('../models');
-const Contacts = db.contacts;
+const Contact = db.contacts;
 
 const apiKey =
   'Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N';
@@ -14,23 +14,24 @@ exports.create = (req, res) => {
     return;
   }
 
-  // Create a Temple
-  const contact = new Temple({
-    temple_id: req.body.temple_id,
-    name: req.body.name,
-    description: req.body.description,
-    location: req.body.location,
-  });
-  // Save Temple in the database
-  temple
-    .save(temple)
+  // Create 
+  const contact = new  Contact ({
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
+    email: req.body.email,
+    favorite_color: req.body.favorite_color,
+    birthday: req.body.birthday
+    });
+  // Save 
+  contact
+    .save(contact)
     .then((data) => {
       res.send(data);
     })
     .catch((err) => {
       res.status(500).send({
         message:
-          err.message || 'Some error occurred while creating the Temple.',
+          err.message || 'Some error occurred while creating the contact.',
       });
     });
 };
@@ -41,10 +42,10 @@ exports.findAll = (req, res) => {
   */
   console.log(req.header('apiKey'));
   if (req.header('apiKey') === apiKey) {
-    Temple.find(
+    Contact.find(
       {},
       {
-        temple_id: 1,
+  
         name: 1,
         location: 1,
         dedicated: 1,
@@ -58,7 +59,7 @@ exports.findAll = (req, res) => {
       .catch((err) => {
         res.status(500).send({
           message:
-            err.message || 'Some error occurred while retrieving temples.',
+            err.message || 'Some error occurred while retrieving.',
         });
       });
   } else {
@@ -71,19 +72,19 @@ exports.findOne = (req, res) => {
   /*
     #swagger.description = 'API Key if needed: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68XwZj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N'
   */
-  const temple_id = req.params.temple_id;
+  const contact_id = req.params.temple_id;
   if (req.header('apiKey') === apiKey) {
-    Temple.find({ temple_id: temple_id })
+    Contact.find({ _id: _id })
       .then((data) => {
         if (!data)
           res
             .status(404)
-            .send({ message: 'Not found Temple with id ' + temple_id });
+            .send({ message: 'Not found Temple with id ' + contact_id });
         else res.send(data[0]);
       })
       .catch((err) => {
         res.status(500).send({
-          message: 'Error retrieving Temple with temple_id=' + temple_id,
+          message: 'Error retrieving Temple with contact_id=' + contact_id,
         });
       });
   } else {

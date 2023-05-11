@@ -1,8 +1,8 @@
 const routes = require('express').Router();
-const contacts = require('./contacts');
+const contact = require('./contact');
 
 routes.use('/', require('./swagger'));
-routes.use('/contacts', contacts);
+routes.use('/contact', contact);
 routes.use(
   '/',
   (docData = (req, res) => {

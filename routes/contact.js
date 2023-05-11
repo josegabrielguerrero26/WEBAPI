@@ -1,8 +1,8 @@
 const routes = require('express').Router();
-const temples = require('../controllers/contacts');
+const contact = require('../controllers/contact.js');
 
 routes.get('/', contact.findAll);
-routes.get('/:contact_id', temples.findOne);
+routes.get('/:contact_id', contact.findOne);
 
 routes.post('/', contact.create);
 

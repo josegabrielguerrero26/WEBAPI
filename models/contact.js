@@ -1,9 +1,8 @@
 module.exports = (mongoose) => {
     const contacts = mongoose.model(
-      'contacts',
+      'contact',
       mongoose.Schema(
         {
-          _id: Number,
           first_name: String,
           last_name: String,
           email: String,
