@@ -1,7 +1,7 @@
-This is the first app created for this class
+# Contacts API
+This is the first app created with mongodb.
 
-HOW to run it
+## Instructions to run application
 
-Run npm install from the backend folder in the terminal.
-
-    npm start
+- Run npm install in the terminal
+- npm start

@@ -1,77 +1,92 @@
-const mongodb = require('../db/connect');
-const ObjectId = require('mongodb').ObjectId;
+const db = require('../models');
+const Contacts = db.contacts;
 
-const getAll = async (req, res) => {
-  const result = await mongodb.getDb().db('test').collection('contacts').find();
-  result.toArray().then((lists) => {
-    res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(lists);
+const apiKey =
+  'Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N';
+
+exports.create = (req, res) => {
+  /*
+    #swagger.description = 'API Key if needed: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N'
+  */
+  // Validate request
+  if (!req.body.name) {
+    res.status(400).send({ message: 'Content can not be empty!' });
+    return;
+  }
+
+  // Create a Temple
+  const contact = new Temple({
+    temple_id: req.body.temple_id,
+    name: req.body.name,
+    description: req.body.description,
+    location: req.body.location,
   });
+  // Save Temple in the database
+  temple
+    .save(temple)
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message:
+          err.message || 'Some error occurred while creating the Temple.',
+      });
+    });
 };
 
-const getSingle = async (req, res) => {
-  const userId = new ObjectId(req.params.id);
-  const result = await mongodb.getDb().db('test').collection('contacts').find({ _id: userId });
-  result.toArray().then((lists) => {
-    res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(lists[0]);
-  });
-};
-
-const createContact = async (req, res) => {
-  const contact = {
-    first_name: req.body.first_name,
-    last_name: req.body.last_name,
-    email: req.body.email,
-    favorite_color: req.body.favorite_color,
-    birthday: req.body.birthday
-    };
-  const response = await mongodb.getDb().db('test').collection('contacts').insertOne(contact);
-  if (response.acknowledged) {
-    res.status(201).json(response);
+exports.findAll = (req, res) => {
+  /*
+    #swagger.description = 'API Key if needed: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68XwZj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N'
+  */
+  console.log(req.header('apiKey'));
+  if (req.header('apiKey') === apiKey) {
+    Temple.find(
+      {},
+      {
+        temple_id: 1,
+        name: 1,
+        location: 1,
+        dedicated: 1,
+        additionalInfo: 1,
+        _id: 0,
+      }
+    )
+      .then((data) => {
+        res.send(data);
+      })
+      .catch((err) => {
+        res.status(500).send({
+          message:
+            err.message || 'Some error occurred while retrieving temples.',
+        });
+      });
   } else {
-    res.status(500).json(response.error || 'Some error occurred while creating the contact.');
+    res.send('Invalid apiKey, please read the documentation.');
   }
 };
 
-const updateContact = async (req, res) => {
-  const userId = new ObjectId(req.params.id);
-  // be aware of updateOne if you only want to update specific fields
-  const contact = {
-    first_name: req.body.first_name,
-    last_name: req.body.last_name,
-    email: req.body.email,
-    favorite_color: req.body.favorite_color,
-    birthday: req.body.birthday
-  };
-  const response =  await mongodb
-    .getDb()
-    .db('test')
-    .collection('contacts')
-    .replaceOne({ _id: userId },contact);
-  console.log(response);
-  if (response.modifiedCount > 0) {
-    res.status(204).send();
+// Find a single Temple with an id
+exports.findOne = (req, res) => {
+  /*
+    #swagger.description = 'API Key if needed: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68XwZj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N'
+  */
+  const temple_id = req.params.temple_id;
+  if (req.header('apiKey') === apiKey) {
+    Temple.find({ temple_id: temple_id })
+      .then((data) => {
+        if (!data)
+          res
+            .status(404)
+            .send({ message: 'Not found Temple with id ' + temple_id });
+        else res.send(data[0]);
+      })
+      .catch((err) => {
+        res.status(500).send({
+          message: 'Error retrieving Temple with temple_id=' + temple_id,
+        });
+      });
   } else {
-    res.status(500).json(response.error || 'Error.');
+    res.send('Invalid apiKey, please read the documentation.');
   }
-};
-
-const deleteContact = async (req, res) => {
-  const userId = new ObjectId(req.params.id);
-  const response = await mongodb.getDb().db('test').collection('contacts').deleteOne({ _id: userId }, true);
-  console.log(response);
-  if (response.deletedCount > 0) {
-    res.status(204).send();
-  } else {
-    res.status(500).json(response.error || 'Error occurred while deleting contact');
-  }
-};
-
-module.exports = {
-  getAll,
-  getSingle,
-  createContact,
-  updateContact,
-  deleteContact
 };

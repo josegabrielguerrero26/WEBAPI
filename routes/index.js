@@ -1,6 +1,14 @@
-const express = require('express');
-const router = express.Router();
+const routes = require('express').Router();
+const contacts = require('./contacts');
 
-router.use('/contacts', require('./contacts'));
-
-module.exports = router;
+routes.use('/', require('./swagger'));
+routes.use('/contacts', contacts);
+routes.use(
+  '/',
+  (docData = (req, res) => {
+    let docData = {
+      documentationURL: '# Pending',
+    };
+    res.send(docData);
+  })
+);
