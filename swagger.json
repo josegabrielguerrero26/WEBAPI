@@ -5,10 +5,10 @@
     "description": "MongoDb with contacts",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "project1-kt79.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/contacts/": {
